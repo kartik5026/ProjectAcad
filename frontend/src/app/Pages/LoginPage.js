@@ -37,7 +37,7 @@ const LoginPage = () => {
         const role = '/'+res.data.msg.role;
         router.push(role);
     }
-    // Add your login logic here (e.g., API call)
+    
   };
 
   return (
