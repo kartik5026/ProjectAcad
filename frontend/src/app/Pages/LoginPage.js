@@ -24,7 +24,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res= await axios.post('http://localhost:5000/login',formData, {withCredentials:true});
+    const res= await axios.post('https://projectacad.onrender.com/login',formData, {withCredentials:true});
     console.log(res.data);
     if(res.data.msg =='Invalid'){
         alert('use admin as password');
