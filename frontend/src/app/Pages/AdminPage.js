@@ -24,7 +24,7 @@ const AdminPage = () => {
 
 
   async function getCourses() {
-    const res = await axios.get('http://localhost:5000/admin/getCourses', {withCredentials:true});
+    const res = await axios.get('https://projectacad.onrender.com/admin/getCourses', {withCredentials:true});
     console.log(res.data);
     
     if(res.data=='Access Denied'){
