@@ -15,7 +15,7 @@ function UserPage() {
     const [enrolledCourses, setEnrolledCourses] = useState([]);
     const [access,setAccess] = useState();
     async function getCourses() {
-        const res = await axios.get('http://localhost:5000/user/getCourses', {withCredentials:true});
+        const res = await axios.get('https://projectacad.onrender.com/user/getCourses', {withCredentials:true});
         if(res.data=='Access Denied'){
             setAccess(res.data)
            }
@@ -35,7 +35,7 @@ function UserPage() {
             alert('You are already enrolled in this course!');
             return;
         }
-        const res = await axios.post('http://localhost:5000/enroll', { name, id });
+        const res = await axios.post('https://projectacad.onrender.com/enroll', { name, id });
         if (res.data === 'Enrolled') {
             alert('Enrolled');
 
@@ -49,7 +49,7 @@ function UserPage() {
 
 
         try {
-            const res = await axios.post('http://localhost:5000/getUserEnrollments', { name });
+            const res = await axios.post('https://projectacad.onrender.com/getUserEnrollments', { name });
             console.log(res.data);
             setEnrolledCourses(res.data);  // Store the enrolled courses in state
         } catch (error) {
