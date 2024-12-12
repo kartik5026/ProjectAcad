@@ -65,14 +65,14 @@ const AdminPage = () => {
     setEditingCourse(null); // Exit edit mode
 
     // Update on backend
-    const res = await axios.put(`http://localhost:5000/updateCourse/${id}`, updatedCourse);
+    const res = await axios.put(`https://projectacad.onrender.com/updateCourse/${id}`, updatedCourse);
     if (res.data === 'Updated') {
       alert('Course updated successfully!');
     }
   };
 
   async function handleDeleteClick(id){
-    const res = await axios.delete(`http://localhost:5000/deleteCourse/${id}`);
+    const res = await axios.delete(`https://projectacad.onrender.com/deleteCourse/${id}`);
     if(res.data=='Deleted'){
       alert('Course Delted');
     }
