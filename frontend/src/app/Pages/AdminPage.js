@@ -90,7 +90,7 @@ const AdminPage = () => {
       setNewCourse({ title: '', description: '', duration: '', instructor: '' });
       setShowForm(false);
 
-      const res = await axios.post('http://localhost:5000/addCourse', newCourse);
+      const res = await axios.post('https://projectacad.onrender.com/addCourse', newCourse);
       if (res.data === 'Added') {
         alert('New course added!');
         getCourses(); // Refresh the courses list
