@@ -16,7 +16,7 @@ mongoose.connect(uri).then(()=>{
     console.log(err);
 })
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin:'https://project-acad.vercel.app',
     credentials:true,
 }))
 app.use(express.json());
