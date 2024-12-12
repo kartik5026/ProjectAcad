@@ -78,7 +78,7 @@ app.post("/login", async (req,res)=>{
 
     if(password==='admin'){
         const token = jwt.sign({role}, key, {expiresIn:'1h'});
-        res.cookie('myToken', token, {maxAge:60*60*1000, httpOnly:true});
+        res.cookie('myToken', token, {maxAge:60*60*1000, httpOnly:true, secure: true, sameSite: 'None'});
         res.json({msg:{name,role}});
     }
     else{
